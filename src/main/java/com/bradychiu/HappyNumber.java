@@ -5,14 +5,16 @@ import java.util.HashSet;
 
 class HappyNumber {
     public static void printResults() {
+        System.out.println("Happy Number");
+
         System.out.println(new StringBuilder()
-                .append("Happy Number Original: ")
+                .append("Original: ")
                 .append(HappyNumber.isHappyOriginal(9434)));
         System.out.println(new StringBuilder()
-                .append("Happy Number Cleaner: ")
+                .append("Cleaner: ")
                 .append(HappyNumber.isHappyCleaner(9434)));
         System.out.println(new StringBuilder()
-                .append("Happy Number Optimal: ")
+                .append("Optimal: ")
                 .append(HappyNumber.isHappyOptimal(9434)));
     }
     static boolean isHappyOriginal(int n) {

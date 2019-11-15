@@ -3,7 +3,10 @@ package com.bradychiu;
 import java.util.HashSet;
 
 public class FirstMissingPositive {
-    public static void main(String args[]) {
+
+    public static void printResults() {
+        System.out.println("First Missing Positive");
+
         System.out.println(firstMissingPositiveOriginal(new int[]{1,2,0}));
         System.out.println(firstMissingPositiveOriginal(new int[]{3,4,-1,1}));
         System.out.println(firstMissingPositiveOriginal(new int[]{7,8,9,11,12}));

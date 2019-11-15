@@ -2,14 +2,16 @@ package com.bradychiu;
 
 class CountPrime {
     public static void printResults() {
+        System.out.println("Count Prime");
+
         System.out.println(new StringBuilder()
-            .append("Count Primes Original: ")
+            .append("Original: ")
             .append(CountPrime.countPrimesOriginal(151515)));
         System.out.println(new StringBuilder()
-                .append("Count Primes Better Math: ")
+                .append("Better Math: ")
                 .append(CountPrime.countPrimesBetterMath(151515)));
         System.out.println(new StringBuilder()
-                .append("Count Primes Optimal: ")
+                .append("Optimal: ")
                 .append(CountPrime.countPrimesOptimal(151515)));
     }
 

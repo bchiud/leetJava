@@ -2,83 +2,45 @@ package com.bradychiu;
 
 public class SquareRoot {
 
-//    public static void printResults() {
-//        System.out.println(new StringBuilder()
-//                .append("Square Root Original: ")
-//                .append(SquareRoot.squareRootOriginal(4))
-//                .toString());
-//    }
-//
-//
-//    static double squareRootOriginal(double input) {
-//
-//
-//        /*
-//        1) find if between exponent and exponent + 1
-//        2) get mid point and determine if between midpoint
-//        3) iterate per decimal place
-//         */
-//
-//
-//        if(input == 0 || input == 1) {
-//            return input;
-//        }
-//
-//        int base = 10;
-//        int exponent = 1;
-//
-//        int upperBound = (int) Math.pow(base, exponent + 1);
-//
-//        while(input > Math.pow(upperBound, 2)) {
-//            exponent += 1;
-//            upperBound = (int) Math.pow(base, exponent);
-//        }
-//
-//        int lowerBound = (int) Math.pow(base, exponent - 1);
-//
-//
-//
-//
-//
-//
-//        int decimalPoints = 0;
-//
-//
-//        while(true) {
-//
-//            int midPoint = ( lowerBound + upperBound ) / 2;
-//            int midPointPow = (int) Math.pow(midPoint, 2);
-//
-//            if(lowerBound == upperBound - 1) {
-//                break;
-//            } else if (input == midPointPow) {
-//                break;
-//            } else if(input < midPointPow) {
-//                upperBound = midPoint;
-//            } else if(input > midPointPow) {
-//                lowerBound = midPoint;
-//            }
-//
-//
-//        }
-//
-//
-//
-//
-//
-//
-//
-//
-//        if(input > Math.pow(lowerBound, 2) & input < Math.pow(midPoint, 2)) {
-//
-//        }
-//
-//
-//        double output = input;
-//
-//        return output;
-//    }
+    public static void printResults() {
+        System.out.println("Square Root");
 
+        System.out.println(new StringBuilder()
+                .append("Original: ")
+                .append(SquareRoot.squareRootOriginal(99))
+                .toString());
+        System.out.println(new StringBuilder()
+                .append("Original: ")
+                .append(SquareRoot.squareRootOriginal(100))
+                .toString());
+        System.out.println(new StringBuilder()
+                .append("Original: ")
+                .append(SquareRoot.squareRootOriginal(101))
+                .toString());
+    }
 
+    static double squareRootOriginal(int input) {
+
+        if(input == 0) {
+            return 0;
+        }
+
+        int left = 1, right = input / 2 + 1;
+
+        while(left + 1 < right) {
+            int mid = ( left + right ) / 2;
+
+            if( mid * mid > input) { // 3 * 3 > 5
+                right = mid - 1;
+            } else if( (mid+1)*(mid+1) > input) {
+                return mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return left;
+
+    }
 
 }

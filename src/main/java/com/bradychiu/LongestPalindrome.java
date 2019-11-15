@@ -6,6 +6,8 @@ public class LongestPalindrome {
     }
 
     static void printResults() {
+
+
         String a = "abcba",
                 b = "abcdefedcba",
                 c = "twtrabcbaqrtsvstre",
@@ -13,8 +15,10 @@ public class LongestPalindrome {
                 e = "bb",
                 f = "aabbaa";
 
+        System.out.println("Longest Palindrome ");
+
         // System.out.println(new StringBuilder()
-        //         .append("Longest Palindrome Original:")
+        //         .append("Original:")
         //         .append("\n").append(longestPalindromeOriginal(a))
         //         .append("\n").append(longestPalindromeOriginal(b))
         //         .append("\n").append(longestPalindromeOriginal(c))
@@ -24,7 +28,7 @@ public class LongestPalindrome {
         //         .toString());
         //
         // System.out.println(new StringBuilder()
-        //         .append("Longest Palindrome Original Two:")
+        //         .append("Original Two:")
         //         .append("\n").append(longestPalindromeOriginalTwo(a))
         //         .append("\n").append(longestPalindromeOriginalTwo(b))
         //         .append("\n").append(longestPalindromeOriginalTwo(c))
@@ -44,7 +48,7 @@ public class LongestPalindrome {
                 // .toString());
 
         System.out.println(new StringBuilder()
-                .append("Longest Palindrome Dynamic Programming:")
+                .append("Dynamic Programming:")
                 .append("\n").append(longestPalindromeDynamicProgramming(a))
                 // .append("\n").append(longestPalindromeDynamicProgramming(b))
                 // .append("\n").append(longestPalindromeDynamicProgramming(c))

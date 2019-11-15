@@ -1,7 +1,7 @@
 package com.bradychiu;
 
 public class ExcelSheetColumnTitle {
-    public static void main(String args[]) {
+    public static void printResults() {
         System.out.println(excelSheetColumnTitleOriginal(5));
         System.out.println(excelSheetColumnTitleOriginal(28));
         System.out.println(excelSheetColumnTitleOriginal(701));

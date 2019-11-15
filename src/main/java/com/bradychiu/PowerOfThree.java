@@ -2,14 +2,16 @@ package com.bradychiu;
 
 public class PowerOfThree {
     public static void printResults() {
+        System.out.println("Power of Three ");
+
         System.out.println(new StringBuilder()
-                .append("Power of Three Recursive: ")
+                .append("Recursive: ")
                 .append(PowerOfThree.isPowerOfThreeRecursive(243)));
         System.out.println(new StringBuilder()
-                .append("Power of Three Logarithm: ")
+                .append("Logarithm: ")
                 .append(PowerOfThree.isPowerOfThreeLogarithm(243)));
         System.out.println(new StringBuilder()
-                .append("Power of Three Optimal: ")
+                .append("Optimal: ")
                 .append(PowerOfThree.isPowerOfThreeOptimal(243)));
     }
 

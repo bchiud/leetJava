@@ -34,8 +34,10 @@ public class AddTwoNumbers {
         ListNode e1 = new ListNode(5),
                 f1 = new ListNode(5);
 
+        System.out.println("Add Two Numbers");
+
         System.out.println(new StringBuilder()
-                .append("Add Two Numbers Original: ")
+                .append("Original: ")
                 .append(stringLinkedList(addTwoNumbersOriginal(a1, b1)))
                 .toString());
         // System.out.println(new StringBuilder()
@@ -43,7 +45,7 @@ public class AddTwoNumbers {
         //         .append(printLinkedList(addTwoNumbersOpimal(a1, b1)))
         //         .toString());
         System.out.println(new StringBuilder()
-                .append("Add Two Numbers Original: ")
+                .append("Original: ")
                 .append(stringLinkedList(addTwoNumbersOriginal(c1, d1)))
                 .toString());
         // System.out.println(new StringBuilder()
@@ -51,7 +53,7 @@ public class AddTwoNumbers {
         //         .append(printLinkedList(addTwoNumbersOpimal(c1, d1)))
         //         .toString());
         System.out.println(new StringBuilder()
-                .append("Add Two Numbers Original: ")
+                .append("Original: ")
                 .append(stringLinkedList(addTwoNumbersOriginal(e1, f1)))
                 .toString());
         // System.out.println(new StringBuilder()

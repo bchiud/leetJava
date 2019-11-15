@@ -2,6 +2,8 @@ package com.bradychiu;
 
 class CountAndSay {
     static void printResults() {
+        System.out.println("Count And Say");
+
         for(int i = 1; i < 15; i++) {
             System.out.println(countAndSayOriginal(i));
         }

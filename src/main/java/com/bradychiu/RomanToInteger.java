@@ -4,16 +4,18 @@ import java.util.ArrayList;
 
 class RomanToInteger {
     public static void printResults() {
+        System.out.println("Roman To Ingeter");
+
         System.out.println(new StringBuilder()
-                .append("Roman To Ingeter Original: ")
+                .append("Original: ")
                 .append(RomanToInteger.romanToIntOriginal("MMMCMXCIV"))
                 .toString());
         System.out.println(new StringBuilder()
-                .append("Roman To Ingeter Math: ")
+                .append("Math: ")
                 .append(RomanToInteger.romanToIntMath("MMMCMXCIV"))
                 .toString());
         System.out.println(new StringBuilder()
-                .append("Roman To Ingeter Optimal: ")
+                .append("Optimal: ")
                 .append(RomanToInteger.romanToIntOptimal("MMMCMXCIV"))
                 .toString());
     }

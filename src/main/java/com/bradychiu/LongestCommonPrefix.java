@@ -2,13 +2,15 @@ package com.bradychiu;
 
 public class LongestCommonPrefix {
     public static void printReuslts() {
+        System.out.println("Longest Common Prefix");
+
         System.out.println(new StringBuilder()
-                .append("Longest Common Prefix Original: ")
+                .append("Original: ")
                 .append(LongestCommonPrefix.longestCommonPrefixOriginal(new String[] {
                         "asdf", "asdfasdf", "asdfasdfasdf", "asasdfasdfasdf"
                 })));
         System.out.println(new StringBuilder()
-                .append("Longest Common Prefix Optimal: ")
+                .append("Optimal: ")
                 .append(LongestCommonPrefix.longestCommonPrefixOptimal(new String[] {
                         "asdf", "asdfasdf", "asdfasdfasdf", "asasdfasdfasdf"
                 })));

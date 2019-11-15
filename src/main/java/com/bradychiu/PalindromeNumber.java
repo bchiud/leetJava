@@ -2,12 +2,14 @@ package com.bradychiu;
 
 class PalindromeNumber {
     static void printResults() {
+        System.out.println("Palindrome Number");
+
         System.out.println(new StringBuilder()
-                .append("Palindrome Number Original: ")
+                .append("Original: ")
                 .append(PalindromeNumber.isPalindromeOriginal(2147483647))
                 .toString());
         System.out.println(new StringBuilder()
-                .append("Palindrone Number Optimal: ")
+                .append("Optimal: ")
                 .append(PalindromeNumber.isPalindromeOptimal(2147483647))
                 .toString());
     }

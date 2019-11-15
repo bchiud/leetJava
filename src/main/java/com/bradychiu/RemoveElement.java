@@ -3,11 +3,9 @@ package com.bradychiu;
 public class RemoveElement {
     // this question was written poorly on leetcode
 
-    public static void main(String args[]) {
-        printResult();
-    }
-
     static void printResult() {
+        System.out.println("Remove Element");
+
         removeElement(new int[]{3,2,2,3}, 2);
     }
 

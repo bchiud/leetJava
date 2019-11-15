@@ -7,24 +7,26 @@ import java.util.stream.IntStream;
 
 class SingleNumber {
     public static void printResults() {
+        System.out.println("Single Number ");
+
         System.out.println(new StringBuilder()
-                .append("Single Number Original: ")
+                .append("Original: ")
                 .append(SingleNumber.singleNumberOriginal(new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5}))
                 .toString());
         System.out.println(new StringBuilder()
-                .append("Single Number Math: ")
+                .append("Math: ")
                 .append(SingleNumber.singleNumberMath(new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5}))
                 .toString());
         System.out.println(new StringBuilder()
-                .append("Single Number HashSet: ")
+                .append("HashSet: ")
                 .append(SingleNumber.singleNumberHashSet(new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5}))
                 .toString());
         System.out.println(new StringBuilder()
-                .append("Single Number Pairs: ")
+                .append("Pairs: ")
                 .append(SingleNumber.singleNumberPairs(new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5}))
                 .toString());
         System.out.println(new StringBuilder()
-                .append("Single Number Optimal: ")
+                .append("Optimal: ")
                 .append(SingleNumber.singleNumberOptimal(new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8}))
                 .toString());
     }

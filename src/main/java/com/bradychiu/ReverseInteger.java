@@ -2,12 +2,14 @@ package com.bradychiu;
 
 class ReverseInteger {
     public static void printResults() {
+        System.out.println("Reverse Integer ");
+
         System.out.println(new StringBuilder()
-                .append("Reverse Integer Original: ")
+                .append("Original: ")
                 .append(ReverseInteger.reverseIntegerOriginal(-2147483648))
                 .toString());
         System.out.println(new StringBuilder()
-                .append("Reverse Integer Optimal : ")
+                .append("Optimal : ")
                 .append(ReverseInteger.reverseIntegerOptimal(-2147483648))
                 .toString());
     }

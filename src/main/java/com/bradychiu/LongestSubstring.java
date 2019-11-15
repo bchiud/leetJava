@@ -8,28 +8,30 @@ public class LongestSubstring {
         String b = "bbbbb"; // "b" -> 1
         String c = "pwwkew"; // "wke" -> 3
 
+        System.out.println("Longest SubString");
+
         // System.out.println(new StringBuilder()
-        //         .append("Longest SubString Original: ")
+        //         .append("Original: ")
         //         .append(String.valueOf(lengthOfLongestSubstringOriginal(a)))
         //         .toString());
 
         // System.out.println(new StringBuilder()
-        //         .append("Longest SubString Original Two: ")
+        //         .append("Original Two: ")
         //         .append(String.valueOf(lengthOfLongestSubstringOriginalTwo(a)))
         //         .toString());
 
         System.out.println(new StringBuilder()
-                .append("Longest SubString HashSet: ")
+                .append("HashSet: ")
                 .append(String.valueOf(lengthOfLongestSubstringHashSet(c)))
                 .toString());
 
         System.out.println(new StringBuilder()
-                .append("Longest SubString HashMap: ")
+                .append("HashMap: ")
                 .append(String.valueOf(lengthOfLongestSubstringHashMap(c)))
                 .toString());
 
         // System.out.println(new StringBuilder()
-        //         .append("Longest SubString Optimal: ")
+        //         .append("Optimal: ")
         //         .append(String.valueOf(lengthOfLongestSubstringOptimal(c)))
         //         .toString());
     }
