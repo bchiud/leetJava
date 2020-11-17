@@ -42,11 +42,11 @@ public class DeleteNodeInLinkedList {
     ListNode head;  // head of list
 
     /* Linked list Node*/
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
+    // class ListNode {
+    //     int val;
+    //     ListNode next;
+    //     ListNode(int x) { val = x; }
+    // }
 
     /* Inserts a new Node at front of the list. */
     void push(int new_data) {
