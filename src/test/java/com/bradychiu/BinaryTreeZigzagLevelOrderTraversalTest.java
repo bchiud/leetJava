@@ -29,7 +29,7 @@ class BinaryTreeZigzagLevelOrderTraversalTest {
         expected.add(Arrays.asList(20, 9));
         expected.add(Arrays.asList(15, 7));
 
-        compareListOfLists(expected, runSolution(root));
+        equalsListOfLists(expected, runSolution(root));
     }
 
     @Test
@@ -47,10 +47,10 @@ class BinaryTreeZigzagLevelOrderTraversalTest {
 
         List<List<Integer>> actual = runSolution(root);
 
-        compareListOfLists(expected, actual);
+        equalsListOfLists(expected, actual);
     }
 
-    private void compareListOfLists(List<List<Integer>> expected, List<List<Integer>> actual) {
+    private void equalsListOfLists(List<List<Integer>> expected, List<List<Integer>> actual) {
         assertEquals(expected.size(), actual.size());
         for (int i = 0; i < expected.size(); i++) {
             assertEquals(expected.get(i), actual.get(i));
