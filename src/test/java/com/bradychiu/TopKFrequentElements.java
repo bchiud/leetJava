@@ -102,6 +102,8 @@ public class TopKFrequentElements {
     }
 
     public static void main(String[] args) {
+        // (a,b) -> (a - b) returns min and is the default
+        // (a,b) -> (b - a) returns max
         Queue<Integer> heap = new PriorityQueue<>((newInt, oldInt) -> compare(newInt, oldInt));
 
         heap.add(4);
