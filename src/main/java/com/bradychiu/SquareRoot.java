@@ -28,7 +28,7 @@ public class SquareRoot {
         int left = 1, right = input / 2 + 1;
 
         while (left + 1 < right) {
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
 
             if (mid * mid > input) { // 3 * 3 > 5
                 right = mid - 1;

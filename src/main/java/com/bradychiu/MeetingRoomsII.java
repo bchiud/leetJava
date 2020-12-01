@@ -21,7 +21,7 @@ public class MeetingRoomsII {
      * * min heap
      * * * worst case has all meetings collide, so n add operations
      * * * min extraction takes n*log(n)
-     *
+     * <p>
      * space: n -> worst case heap is n
      */
 
@@ -31,10 +31,10 @@ public class MeetingRoomsII {
 
         Arrays.sort(intervals, (a, b) -> (a[0] - b[0]));
 
-        Queue<Integer> roomEnds = new PriorityQueue<>((a,b) -> (a - b));
-        for(int[] meeting : intervals) {
+        Queue<Integer> roomEnds = new PriorityQueue<>((a, b) -> (a - b));
+        for (int[] meeting : intervals) {
             // if room is free then free it up so current meeting can use
-            if(!roomEnds.isEmpty() && meeting[0] >= roomEnds.peek())
+            if (!roomEnds.isEmpty() && meeting[0] >= roomEnds.peek())
                 roomEnds.poll();
 
 
@@ -54,7 +54,7 @@ public class MeetingRoomsII {
 
         int[] starts = new int[intervals.length];
         int[] ends = new int[intervals.length];
-        for(int i = 0; i < intervals.length; i++) {
+        for (int i = 0; i < intervals.length; i++) {
             starts[i] = intervals[i][0];
             ends[i] = intervals[i][1];
         }
@@ -65,14 +65,17 @@ public class MeetingRoomsII {
         int startIndex = 0;
         int endIndex = 0;
         while (startIndex < intervals.length) {
-            if(starts[startIndex] >= ends[endIndex]) {
+            // vacate a room
+            if (starts[startIndex] >= ends[endIndex]) {
                 rooms--;
                 endIndex++;
             }
+            // use a room
             rooms++;
             startIndex++;
         }
 
         return rooms;
     }
+
 }

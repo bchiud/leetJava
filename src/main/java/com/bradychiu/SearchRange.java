@@ -21,7 +21,7 @@ public class SearchRange {
         if (lo >= hi)
             return lo;
 
-        int mid = (lo + hi) / 2;
+        int mid = lo + (hi - lo) / 2;
         if (nums[mid] < target)
             return firstGreaterEqualBinaryRecursive(nums, target, mid + 1, hi);
         else
@@ -48,7 +48,7 @@ public class SearchRange {
         int hi = nums.length;
 
         while (lo < hi) {
-            int mid = (lo + hi) / 2;
+            int mid = lo + (hi - lo) / 2;
             if (nums[mid] < target)
                 lo = mid + 1;
             else
