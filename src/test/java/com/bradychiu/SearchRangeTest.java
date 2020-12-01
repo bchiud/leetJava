@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class SearchRangeTest {
 
     private static int[] runSolution(int[] nums, int target) {
-        // return SearchRange.searchRangeBinaryRecursive(nums, target);
-        return SearchRange.searchRangeBinaryIterative(nums, target);
+        return SearchRange.searchRangeBinaryRecursive(nums, target);
+        // return SearchRange.searchRangeBinaryIterative(nums, target);
     }
 
     @Test
@@ -24,7 +24,7 @@ class SearchRangeTest {
     void two() {
         int[] input = new int[]{5, 7, 7, 8, 8, 10};
         int target = 6;
-        int[] expected = new int[]{-1, 1};
+        int[] expected = new int[]{-1, -1};
 
         assertArrayEquals(expected, runSolution(input, target));
     }
@@ -33,7 +33,7 @@ class SearchRangeTest {
     void three() {
         int[] input = new int[]{};
         int target = 0;
-        int[] expected = new int[]{-1, 1};
+        int[] expected = new int[]{-1, -1};
 
         assertArrayEquals(expected, runSolution(input, target));
     }
@@ -78,7 +78,25 @@ class SearchRangeTest {
     void eight() {
         int[] input = new int[]{2, 2, 2};
         int target = 3;
-        int[] expected = new int[]{-1, 1};
+        int[] expected = new int[]{-1, -1};
+
+        assertArrayEquals(expected, runSolution(input, target));
+    }
+
+    @Test
+    void nine() {
+        int[] input = new int[]{2, 2, 2, 3};
+        int target = 3;
+        int[] expected = new int[]{3, 3};
+
+        assertArrayEquals(expected, runSolution(input, target));
+    }
+
+    @Test
+    void ten() {
+        int[] input = new int[]{2, 2, 3};
+        int target = 3;
+        int[] expected = new int[]{2, 2};
 
         assertArrayEquals(expected, runSolution(input, target));
     }
