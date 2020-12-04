@@ -1,5 +1,7 @@
 package com.bradychiu;
 
+import com.bradychiu.common.ListNode;
+
 public class IntersectionTwoLinkedLists {
 
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {

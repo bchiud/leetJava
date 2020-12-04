@@ -1,5 +1,7 @@
 package com.bradychiu;
 
+import com.bradychiu.common.ListNode;
+
 public class DeleteNodeInLinkedList {
     // linked list mock modified from http://www.geeksforgeeks.org/delete-a-linked-list-node-at-a-given-position/
 

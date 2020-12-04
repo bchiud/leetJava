@@ -1,4 +1,4 @@
-package com.bradychiu;
+package com.bradychiu.common;
 
 public class Node {
     public int val;

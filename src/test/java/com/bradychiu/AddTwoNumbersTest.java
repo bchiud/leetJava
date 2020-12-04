@@ -1,8 +1,9 @@
 package com.bradychiu;
 
+import com.bradychiu.common.ListNode;
 import org.junit.jupiter.api.Test;
 
-import static com.bradychiu.ListNode.linkedListValsEquals;
+import static com.bradychiu.common.ListNode.linkedListValsEquals;
 
 class AddTwoNumbersTest {
 

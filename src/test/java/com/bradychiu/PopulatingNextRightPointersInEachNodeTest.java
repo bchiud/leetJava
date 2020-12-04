@@ -1,8 +1,7 @@
 package com.bradychiu;
 
+import com.bradychiu.common.Node;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PopulatingNextRightPointersInEachNodeTest {
 

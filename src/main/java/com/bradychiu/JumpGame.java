@@ -1,10 +1,12 @@
 package com.bradychiu;
 
-enum Memo {
-    GOOD, BAD, UNKNOWN
-}
+
 
 public class JumpGame {
+
+    enum Memo {
+        GOOD, BAD, UNKNOWN
+    }
 
     /**
      * time: 2^n ??

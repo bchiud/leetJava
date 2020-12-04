@@ -1,5 +1,7 @@
 package com.bradychiu;
 
+import com.bradychiu.common.ListNode;
+
 public class SwapListNodePairs {
 
     ListNode swapPairsOriginal(ListNode head) {

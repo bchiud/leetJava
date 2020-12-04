@@ -1,5 +1,7 @@
 package com.bradychiu;
 
+import com.bradychiu.common.TreeNode;
+
 import java.util.Stack;
 
 public class KthSmallestElementInABst {

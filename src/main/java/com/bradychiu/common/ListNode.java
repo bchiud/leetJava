@@ -1,22 +1,22 @@
-package com.bradychiu;
+package com.bradychiu.common;
 
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode() {
+    public ListNode() {
     }
 
-    ListNode(int val) {
+    public ListNode(int val) {
         this.val = val;
     }
 
-    ListNode(int val, ListNode next) {
+    public ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
     }
 
-    static boolean linkedListValsEquals(ListNode l1, ListNode l2) {
+    public static boolean linkedListValsEquals(ListNode l1, ListNode l2) {
         while(l1 != null || l2 != null) {
             // System.out.println(l1.val + ", " + l2.val);
             if (l1.val != l2.val) {
@@ -29,7 +29,7 @@ public class ListNode {
         return true;
     }
 
-    static void printLinkedList(ListNode head) {
+    public static void printLinkedList(ListNode head) {
         assert head != null;
 
         while (head.next != null) {

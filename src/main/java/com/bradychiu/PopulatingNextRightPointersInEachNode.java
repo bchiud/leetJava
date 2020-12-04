@@ -1,5 +1,7 @@
 package com.bradychiu;
 
+import com.bradychiu.common.Node;
+
 public class PopulatingNextRightPointersInEachNode {
 
     // time: n

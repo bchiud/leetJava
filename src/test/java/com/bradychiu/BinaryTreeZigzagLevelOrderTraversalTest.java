@@ -1,5 +1,6 @@
 package com.bradychiu;
 
+import com.bradychiu.common.TreeNode;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
