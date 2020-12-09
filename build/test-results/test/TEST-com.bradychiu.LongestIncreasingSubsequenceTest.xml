@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bradychiu.LongestIncreasingSubsequenceTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2020-12-04T04:17:07" hostname="Bradys-MBP" time="61843.959">
-  <properties/>
-  <testcase name="four()" classname="com.bradychiu.LongestIncreasingSubsequenceTest" time="61843.959">
-    <skipped/>
-  </testcase>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

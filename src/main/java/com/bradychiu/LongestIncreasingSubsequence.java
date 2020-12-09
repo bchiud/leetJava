@@ -36,7 +36,18 @@ public class LongestIncreasingSubsequence {
      * time: n*log(n)
      * space: n
      * maintain a dp array "tails" of the smallest possible value for a subsequence of length i
-     * binary search to find said value
+     *
+     * https://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+     * 1. If "nums" is smallest among all end
+     *    candidates of active lists, we will start
+     *    new active list of length 1.
+     * 2. If "nums" is largest among all end candidates of
+     *    active lists, we will clone the largest active
+     *    list, and extend it by "nums".
+     * 3. If "nums" is in between, we will find a list with
+     *    largest end element that is smaller than "nums".
+     *    Clone and extend this list by "nums". We will discard all
+     *    other lists of same length as that of this modified list.
      */
     public static int lengthOfLISDpBinarySearch(int[] nums) {
         int[] tails = new int[nums.length];
