@@ -2,95 +2,46 @@ package com.bradychiu;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Set;
 
 class HappyNumber {
-    public static void printResults() {
-        System.out.println("Happy Number");
 
-        System.out.println(new StringBuilder()
-                .append("Original: ")
-                .append(HappyNumber.isHappyOriginal(9434)));
-        System.out.println(new StringBuilder()
-                .append("Cleaner: ")
-                .append(HappyNumber.isHappyCleaner(9434)));
-        System.out.println(new StringBuilder()
-                .append("Optimal: ")
-                .append(HappyNumber.isHappyOptimal(9434)));
-    }
-    static boolean isHappyOriginal(int n) {
-        int currentInt = n;
-
-        HashSet<Integer> previousNumbers = new HashSet<>();
-
-        while(!previousNumbers.contains(currentInt)) {
-            // System.out.println("Starting: " + currentInt);
-
-            previousNumbers.add(currentInt);
-
-            ArrayList<Integer> digits = new ArrayList<>();
-            int temp = currentInt;
-            while(temp != 0) {
-                digits.add(0, temp % 10);
-                temp /= 10;
-            }
-            // System.out.println("array " + digits.toString());
-
-            currentInt = 0;
-            for(int i : digits) {
-                // System.out.println("adding: " + Math.pow(i, 2));
-                currentInt += Math.pow(i, 2);
-            }
-            // System.out.println("Ending: " + currentInt);
-            //
-            // System.out.println("evaluation: " + (int) Math.log10(currentInt));
-            // System.out.println("evaluation: " + Math.pow(10, (int) Math.log10(currentInt)));
-            if(currentInt == Math.pow(10, (int) Math.log10(currentInt))) return true;
+    /**
+     * time: log(n)
+     * space: log(n)
+     */
+    public static boolean isHappyHashSet(int n) {
+        Set<Integer> memory = new HashSet<>();
+        while (n != 1 && !memory.contains(n)) {
+            memory.add(n);
+            n  = genNext(n);
         }
 
-        return false;
+        return n == 1;
     }
 
-    static boolean isHappyCleaner(int n) {
-        HashSet<Integer> previousNumbers = new HashSet<>();
+    /**
+     * time: log(n)
+     * space: 1
+     */
+    public static boolean isHappyFloyd(int n) {
+        int slow = n;
+        int fast = genNext(n); // need to apply genNext so while loop passes condition and starts
 
-        int sumSquares, remain;
-        while(previousNumbers.add(n)) {
-            sumSquares = 0;
-            while(n > 0) {
-                remain = n % 10;
-                sumSquares += remain*remain;
-                n /= 10;
-            }
-            if(sumSquares == 1) return true;
-            n = sumSquares;
+        while (fast != 1 && slow != fast) {
+            slow = genNext(slow);
+            fast = genNext(genNext(fast));
         }
-        return false;
+
+        return fast == 1; // if n is a happy number, fast will turn into 1 first
     }
 
-    static boolean isHappyOptimal(int n) {
-        int x = n;
-        int y = n;
-        while(x > 1) {
-            System.out.println("Start x: " + x);
-            x = cal(x) ;
-            System.out.println("End x: " + x);
-            if(x == 1) return true;
-            System.out.println("Start y: " + y);
-            y = cal(cal(y));
-            System.out.println("End y: " + y);
-            if(y == 1) return true;
-            if(x == y) return false;
+    private static int genNext(int n) {
+        int sum = 0;
+        while (n > 0) {
+            sum += (n % 10) * (n % 10);
+            n = n / 10;
         }
-            return true ;
-    }
-
-    static int cal(int n){
-        int x = n;
-        int s = 0;
-        while(x > 0){
-            s = s + (x % 10) * (x % 10);
-            x /= 10;
-        }
-        return s ;
+        return sum;
     }
 }
