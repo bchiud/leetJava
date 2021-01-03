@@ -1,49 +1,40 @@
 package com.bradychiu;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-import static java.util.Arrays.*;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
 
 class TwoSumTest {
 
-    private static int[] integersOne;
-    private static int targetOne;
-    private static int[] expectedOne;
-
-    @BeforeAll
-    static void init() {
-        integersOne = new int[]{2, 7, 11, 15};
-        targetOne = 9;
-        expectedOne = new int[]{0, 1};
+    private static int[] runSolution(int[] nums, int target) {
+        // return TwoSum.twoSumBrute(nums, target);
+        return TwoSum.twoSumHashing(nums, target);
     }
 
     @Test
-    void twoSumBrute() {
-        int[] result = TwoSum.twoSumBrute(integersOne, targetOne);
-        Arrays.sort(result);
-        assertArrayEquals(expectedOne, result);
+    void one() {
+        int[] nums = new int[] {2,7,11,15};
+        int target = 9;
+        int[] expected = new int[] {0,1};
+
+        assertArrayEquals(expected, runSolution(nums, target));
     }
 
     @Test
-    void twoSumHashing() {
-        int[] result = TwoSum.twoSumHashing(integersOne, targetOne);
-        Arrays.sort(result);
-        assertArrayEquals(expectedOne, result);
+    void two() {
+        int[] nums = new int[] {3,2,4};
+        int target = 6;
+        int[] expected = new int[] {1,2};
+
+        assertArrayEquals(expected, runSolution(nums, target));
     }
 
     @Test
-    void twoSumSortedBinarySearch() {
-        assertArrayEquals(expectedOne, TwoSum.twoSumSortedBinarySearch(integersOne, targetOne));
-    }
+    void three() {
+        int[] nums = new int[] {3,3};
+        int target = 6;
+        int[] expected = new int[] {0,1};
 
-    @Test
-    void twoSumSortedPointers() {
-        assertArrayEquals(expectedOne, TwoSum.twoSumSortedPointers(integersOne, targetOne));
+        assertArrayEquals(expected, runSolution(nums, target));
     }
 }

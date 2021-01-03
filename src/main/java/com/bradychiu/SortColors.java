@@ -1,7 +1,5 @@
 package com.bradychiu;
 
-import java.util.Arrays;
-
 public class SortColors {
 
     /**

@@ -1,54 +1,26 @@
 package com.bradychiu;
 
-class ReverseInteger {
-    public static void printResults() {
-        System.out.println("Reverse Integer ");
+public class ReverseInteger {
 
-        System.out.println(new StringBuilder()
-                .append("Original: ")
-                .append(ReverseInteger.reverseIntegerOriginal(-2147483648))
-                .toString());
-        System.out.println(new StringBuilder()
-                .append("Optimal : ")
-                .append(ReverseInteger.reverseIntegerOptimal(-2147483648))
-                .toString());
+    /**
+     * time: log10(n)
+     * space: 1
+     */
+    public static int reverse(int x) {
+        int ans = 0;
+        while (x != 0) {
+            int pop = x % 10;
+            x = x / 10;
+
+            if (ans > Integer.MAX_VALUE / 10 || (ans == Integer.MAX_VALUE / 10 && pop > 7))
+                return 0;
+            if (ans < Integer.MIN_VALUE / 10 || (ans == Integer.MIN_VALUE / 10 && pop < -8))
+                return 0;
+
+            ans = ans * 10 + pop;
+
+        }
+        return ans;
     }
 
-    static int reverseIntegerOriginal(int x) {
-        Boolean negative = false;
-        long oldLong = (long) x;
-        if(oldLong < 0) {
-            negative = true;
-            oldLong = oldLong * -1;
-        }
-
-        String oldS = String.valueOf(oldLong);
-        StringBuilder newSB = new StringBuilder();
-
-        int l = oldS.length();
-        for(int i = l-1; i >= 0; i--) {
-            newSB.append(String.valueOf(oldS.charAt(i)));
-        }
-
-        if(negative) newSB.insert(0, "-");
-
-        long newLong = Long.valueOf(newSB.toString());
-        if(newLong > Integer.MAX_VALUE || newLong < Integer.MIN_VALUE) {
-            return 0;
-        } else {
-            return (int) newLong;
-        }
-    }
-
-    static int reverseIntegerOptimal(int x) {
-        long result = 0;
-
-        while(x != 0) {
-            result = result*10 + x%10;
-            if(result > Integer.MAX_VALUE || result < Integer.MIN_VALUE) return 0;
-            x = x/10;
-        }
-
-        return (int) result;
-    }
 }

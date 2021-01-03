@@ -2,6 +2,10 @@ package com.bradychiu;
 
 public class SumOfTwoIntegers {
     /**
+     * TODO: review bitwise operators
+     *
+     * XOR + Zero-fill left shift
+     *
      *  1 : 0001
      *  2 : 0010
      * ---------
