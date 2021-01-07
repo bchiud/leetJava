@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bradychiu.StringToIntegerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-01-03T11:39:05" hostname="Bradys-MBP" time="0.005">
-  <properties/>
-  <testcase name="seven()" classname="com.bradychiu.StringToIntegerTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

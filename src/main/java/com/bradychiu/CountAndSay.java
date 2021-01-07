@@ -1,33 +1,78 @@
 package com.bradychiu;
 
-class CountAndSay {
-    static void printResults() {
-        System.out.println("Count And Say");
+public class CountAndSay {
+    /**
+     * time: 2^n
+     * space: 1
+     */
+    public static String countAndSaySlidingWindowPointers(int n) {
+        if (n == 1)
+            return "1";
 
-        for(int i = 1; i < 15; i++) {
-            System.out.println(countAndSayOriginal(i));
+        String s = countAndSaySlidingWindowPointers(n - 1);
+        String ans = "";
+
+        int hold = 0;
+        int start = 0;
+        while (start < s.length()) {
+            char startInt = s.charAt(start);
+            int end = start;
+            while (end < s.length() && s.charAt(end) == startInt)
+                end++;
+            ans += String.valueOf(end - start) + startInt;
+            start = end;
         }
+
+        return ans;
     }
 
-    static String countAndSayOriginal(int n) {
-        StringBuilder result = new StringBuilder().append(1);
+    public static String countAndSaySlidingWindowStringBuilder(int n) {
+        StringBuilder curr = new StringBuilder("1");
+        StringBuilder prev;
 
-        for(int iter = 1; iter < n; iter++) {
-            StringBuilder newResult = new StringBuilder();
-            int len = result.length();
-            for(int pos = 0; pos < len; pos++) {
-                int occurances = 1;
-                char curChar = result.charAt(pos);
-                while(pos+1 < len && result.charAt(pos+1) == curChar) {
-                    occurances++;
-                    pos++;
+        for (int i = 1; i < n; i++) {
+            prev = curr;
+            prev.append(" ");
+            curr = new StringBuilder();
+
+            int count = 1;
+
+            for (int j = 1; j < prev.length(); j++) {
+                if (prev.charAt(j) == prev.charAt(j - 1)) {
+                    count++;
+                } else {
+                    curr.append(count).append(prev.charAt(j - 1));
+
+                    count = 1;
                 }
-                newResult.append(occurances).append(curChar);
             }
-
-            result = newResult;
         }
 
-        return result.toString();
+        return curr.toString();
     }
+
+    public static String countAndSayRecursive(int n) {
+        String s = "1";
+        for (int i = 1; i < n; i++) {
+            s = say(s);
+        }
+        return s;
+    }
+
+    public static String say(String s) {
+        s += " ";
+        StringBuilder sb = new StringBuilder();
+
+        int count = 1;
+        for (int i = 1; i < s.length(); i++) {
+            if (s.charAt(i) == s.charAt(i - 1)) {
+                count++;
+            } else {
+                sb.append(count).append(s.charAt(i - 1));
+                count = 1;
+            }
+        }
+        return sb.toString();
+    }
+
 }
